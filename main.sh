@@ -19,3 +19,6 @@ echo '+------------------+'
 
 gcc hello.c -o ./Results/hello
 ./Results/hello
+
+gcc ./Source/imageFile.c -o ./Results/imageFile
+./Results/imageFile
