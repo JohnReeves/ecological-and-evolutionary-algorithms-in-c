@@ -31,6 +31,7 @@ int main(int argc, char *argv[]) {
 	for (int i = 0; i < height; i++){
 	      for (int j = 0; j < width; j++){                   
 		     imageBuffer[i*width + j] = 255 - imageBuffer[i*width + j]; 
+         if ((i + 2*j) > 500) imageBuffer[i*width + j] = 255;
 		 }   
 	}
 

@@ -9,7 +9,7 @@
 
 int main() {
 
-  for (int i=0; i<=0xA; i++)
+  for (int i=0; i<=0x9; i++)
     printf("Hello World!\n");
 
   return 0;
