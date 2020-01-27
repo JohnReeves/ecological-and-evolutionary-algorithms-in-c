@@ -26,14 +26,14 @@ int main(int argc, char *argv[]) {
 
 	if (colorDepth <= 8) fread(colorTable, sizeof(unsigned char), 1024, fi);
 	fread(imageBuffer, sizeof(unsigned char), (height * width), fi);
-
+float k;
 // process image - ie invert each bit in the imageBuffer
 	for (int i = 0; i < height; i++){
 	      for (int j = 0; j < width; j++){                   
 		     imageBuffer[i*width + j] = 255 - imageBuffer[i*width + j]; 
          if ((i + j) > 500) imageBuffer[i*width + j] = rand() % 255;
 
-          k = ((i*2)/y)*((i*2)/y) + (j/y)*(j/y);
+          k = ((i*2.0)/500)*((i*2.0)/500) + (j/500.0)*(j/500.0);
 
          if (k >0.95 && k<1.08)
           imageBuffer[i*width + j] = rand() % 25;
