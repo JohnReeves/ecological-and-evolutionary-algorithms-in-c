@@ -43,8 +43,6 @@ int main(int argc, char *argv[]) {
          // half random noise for fun
          if ((i + j) > 700) imageBuffer[i*width + j] = rand() % 255;
 
-          k = ((i*2.0)/500)*((i*2.0)/500) + (j/500.0)*(j/500.0);
-
           // horizontal line
           if (i==10) imageBuffer[i*width + j] = 0;
           if (i==11) imageBuffer[i*width + j] = 0;
@@ -60,8 +58,10 @@ int main(int argc, char *argv[]) {
 
           // a parabola
           if ((i*i)==1000) imageBuffer[i*width + j] = 0;
-          
+
          // an ellipse
+         k = ((i*2.0)/500)*((i*2.0)/500) + (j/500.0)*(j/500.0);
+
          if (k>0.98 && k<1.0)
           imageBuffer[i*width + j] = rand() % 25;
 		 }   
