@@ -55,8 +55,12 @@ int main(int argc, char *argv[]) {
           if (j==11) imageBuffer[i*width + j] = 0;
           if (j==12) imageBuffer[i*width + j] = 0;
 
+          // linear y = mx + c
           if ((2*i-j)==100) imageBuffer[i*width + j] = 0;
 
+          // a parabola
+          if ((i*i)==1000) imageBuffer[i*width + j] = 0;
+          
          // an ellipse
          if (k>0.98 && k<1.0)
           imageBuffer[i*width + j] = rand() % 25;
