@@ -26,20 +26,34 @@ int main(int argc, char *argv[]) {
 
 	if (colorDepth <= 8) fread(colorTable, sizeof(unsigned char), 1024, fi);
 	fread(imageBuffer, sizeof(unsigned char), (height * width), fi);
-float k;
-// process image - ie invert each bit in the imageBuffer
+
+
+  // a background inverted lena
 	for (int i = 0; i < height; i++){
-	      for (int j = 0; j < width; j++){                   
+	    for (int j = 0; j < width; j++){                   
 		     imageBuffer[i*width + j] = 255 - imageBuffer[i*width + j]; 
+		 }   
+	}
+
+  float k;
+  // axes, graphs and other stuff
+	for (int i = 0; i < height; i++){
+	    for (int j = 0; j < width; j++){                   
+
+         // half random noise for fun
          if ((i + j) > 500) imageBuffer[i*width + j] = rand() % 255;
 
           k = ((i*2.0)/500)*((i*2.0)/500) + (j/500.0)*(j/500.0);
 
-         if (k >0.95 && k<1.08)
+          // horizontal line
+          if (i==10) imageBuffer[i*width + j] = 0;
+          if (j==10) imageBuffer[i*width + j] = 0;
+
+         // an ellipse
+         if (k>0.98 && k<1.0)
           imageBuffer[i*width + j] = rand() % 25;
 		 }   
 	}
-
   fwrite(header, sizeof(unsigned char), 54, fo); 
 	if (colorDepth <= 8) fwrite(colorTable, sizeof(unsigned char), 1024, fo);
 	fwrite(imageBuffer, sizeof(unsigned char), (height * width), fo);
