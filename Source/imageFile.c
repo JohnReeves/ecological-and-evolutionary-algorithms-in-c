@@ -55,6 +55,8 @@ int main(int argc, char *argv[]) {
 
           // linear y = mx + c
           if ((2*i-j)==100) imageBuffer[i*width + j] = 0;
+          if ((2*i-j)==101) imageBuffer[i*width + j] = 0;
+          if ((2*i-j)==102) imageBuffer[i*width + j] = 0;
 
           // a parabola
           if ((i*i)==1000) imageBuffer[i*width + j] = 0;
