@@ -31,11 +31,14 @@ float k;
 	for (int i = 0; i < height; i++){
 	      for (int j = 0; j < width; j++){                   
 		     imageBuffer[i*width + j] = 255 - imageBuffer[i*width + j]; 
+
+         // noise above y = -x + 500
          if ((i + j) > 500) imageBuffer[i*width + j] = rand() % 255;
 
-          k = ((i*2.0)/500)*((i*2.0)/500) + (j/500.0)*(j/500.0);
+          // circle at 
+          k = ((i*2.0)/500)*((i*2.0)/500) + (j*2.0/500.0)*(j*2.0/500.0);
 
-         if (k >0.95 && k<1.08)
+          if (k >0.95 && k<1.08)
           imageBuffer[i*width + j] = rand() % 25;
 		 }   
 	}

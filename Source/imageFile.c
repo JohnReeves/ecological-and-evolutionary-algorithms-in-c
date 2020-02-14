@@ -62,7 +62,7 @@ int main(int argc, char *argv[]) {
           if ((i*i)==1000) imageBuffer[i*width + j] = 0;
 
          // an ellipse
-         k = ((i*2.0)/500)*((i*2.0)/500) + (j/500.0)*(j/500.0);
+         k = ((i*2.0)/500)*((i*2.0)/500) + (j*2.0/500.0)*(j*2.0/500.0);
 
          if (k>0.98 && k<1.0)
           imageBuffer[i*width + j] = rand() % 25;
