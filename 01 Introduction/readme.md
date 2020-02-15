@@ -16,5 +16,19 @@ each of these will be used in the simulations
 
 ## preditor-prey models
 
-lotka-volterra equations 1924
+Lotka-Volterra ODEs from 1924 .  
 
+```
+dV/dt = aV - b/N*PV .  
+dP/dt = e*b/N*PV - dP .  
+
+V == victim population .  
+P == prey population .  
+
+divide equ 1 by equ 2:   
+
+dV/dP = V(aN - bP)/P(e*bV - dN) .  
+
+aN lnP/P0 + d lnV/V0 
+= eb(V - V0) + b(P - P0) .  
+```
